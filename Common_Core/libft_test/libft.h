@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 12:27:26 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/10 12:55:10 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 /* Mandatory Part */
 
 //int	ft_isalpha(char *str); /* Alphabethic character test */
-ft_isdigit();
+//int	ft_isdigit(char *str); /* Decimal-digit character test */
 /* ft_isalnum();
 ft_isascii();
 ft_isprint(); */
