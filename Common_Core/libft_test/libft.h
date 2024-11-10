@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 12:55:10 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:05:01 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 
 /* Mandatory Part */
 
-//int	ft_isalpha(char *str); /* Alphabethic character test */
-//int	ft_isdigit(char *str); /* Decimal-digit character test */
+int	ft_isalpha(char *str); /* Alphabethic character test */
+int	ft_isdigit(char *str); /* Decimal-digit character test */
 /* ft_isalnum();
-ft_isascii();
-ft_isprint(); */
-//int	ft_strlen(char *str); /* Finds length of a string */
+ft_isascii(); */
+int	ft_isprint(char *str); /* Printing character test (space character inclusive) */
+int	ft_strlen(char *str); /* Finds length of a string */
 /*ft_memset();
 ft_bzero();
 ft_memcpy();
