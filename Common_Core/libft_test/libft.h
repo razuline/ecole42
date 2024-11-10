@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 13:18:46 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:27:03 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ ft_memmove();
 ft_strlcpy();
 ft_strlcat();*/
 char	*ft_toupper(char *str); /* Lowercase to uppercase letter conversion*/
-/*ft_tolower();
-ft_strchr();
+char	*ft_tolower(char *str); /* Uppercase to lowercase letter conversion*/
+/*ft_strchr();
 ft_strrchr();
 ft_strncmp();
 ft_memchr();
