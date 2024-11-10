@@ -6,40 +6,28 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:12:49 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 12:54:18 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/10 15:55:21 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-	int	bool;
-
-	i = 0;
-	bool = 0;
-	if (str[i] == '\0')
-		bool = 1;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= '0' && str[i] <= '9')
-			bool = 1;
-		else
-			return (0);
-		i++;
-	}
-	return (bool);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 /*
-int main(void)
+int	main(void)
 {
-	char s[] = "123abc456";
+	int	c;
 
-	if (ft_isdigit(s) == 1)
-		write(1, "Only digits", 11);
+	c = '1';
+	if (ft_isdigit(c) == 1)
+		write(1, "Digit", 5);
 	else
-		write(1, "Other characters", 17);
+		write(1, "Another character", 17);
 	return (0);
 }
 */
