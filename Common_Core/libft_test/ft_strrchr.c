@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:18:01 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 14:57:03 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:04:02 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*p;
-	
+
 	p = NULL;
 	if (*s == (char)c)
 		p = s;
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)p);
 	return (0);
 }
-
+/*
 void	ft_putchar(char c)
 {
 	write (1, &c, 1);
@@ -54,3 +54,4 @@ int	main(void)
 		ft_putstr("Character is not found.\n");
 	return (0);
 }
+*/
