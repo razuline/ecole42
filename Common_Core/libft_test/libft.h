@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 13:54:28 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:33:00 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size); /* Size-bounded string co
 size_t	ft_strlcat(char *dest, char *src, size_t size); /* Size-bounded string concatenation */
 char	*ft_toupper(char *str); /* Lowercase to uppercase letter conversion*/
 char	*ft_tolower(char *str); /* Uppercase to lowercase letter conversion*/
-char	*ft_strchr(char *s, int c); /* Locate character in string (first occurence) */
-char	*ft_strrchr(char *s, int c); /* Locate character in string (last occurence) */
+char	*ft_strchr(const char *s, int c); /* Locate character in string (first occurence) */
+char	*ft_strrchr(const char *s, int c); /* Locate character in string (last occurence) */
 int		ft_strncmp(char *s1, char *s2, size_t n); /* Compare strings (size-bounded) */
 void	*ft_memchr(void *s, int c, size_t n); /* Scan memory for a character */
 int		ft_memcmp(void *s1, void *s2, size_t n); /* Compare memory areas */
 char	*ft_strnstr(char *big, char *little, size_t len); /* Locate a substring in a string (size-bounded) */
 int		ft_atoi(char *str); /* Convert ASCII string to integer */
 void	*ft_calloc(size_t nmemb, size_t size); /* Memory allocation */
-char	*ft_strdup(char *s); /* Save a copy of a string (with malloc) */
+char	*ft_strdup(char *src); /* Save a copy of a string (with malloc) */
 
 #endif
