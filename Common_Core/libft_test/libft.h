@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 18:15:58 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:26:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_bzero(void *s, size_t n); /* Zero a byte string */
 void	*ft_memcpy(void *dest, void *src, size_t n); /* Copy memory area */
 void	*ft_memmove(void *dest, void *src, size_t n); /* Copy memory area */
 size_t	ft_strlcpy(char *dest, char *src, size_t size); /* Size-bounded string copying */
-size_t	ft_strlcat(const char *dest, const char *src, size_t size); /* Size-bounded string concatenation */
+int		ft_strlcat(char *dest, char *src, int size); /* Size-bounded string concatenation */
 char	*ft_toupper(char *str); /* Lowercase to uppercase letter conversion*/
 char	*ft_tolower(char *str); /* Uppercase to lowercase letter conversion*/
 char	*ft_strchr(const char *s, int c); /* Locate character in string (first occurence) */
