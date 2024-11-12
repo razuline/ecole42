@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:19:28 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 16:39:42 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:55:49 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_atoi(char *str);
 
-static int ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r'
 		|| c == '\t' || c == '\v')
 		return (1);
-	return (0);	
+	return (0);
 }
 
 int	ft_atoi(char *str)
@@ -29,9 +29,9 @@ int	ft_atoi(char *str)
 	int	i;
 
 	result = 0;
-	sign = 0;
+	sign = 1;
 	i = 0;
-	while (ft_isspace(str[i]) == 1)
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -46,7 +46,7 @@ int	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
-
+/*
 void	ft_putchar(char c)
 {
 	write (1, &c, 1);
@@ -80,7 +80,7 @@ int	main(int ac, char **av)
 {
 	int	res;
 	int	res2;
-	
+
 	if (ac > 0)
 	{
 		res = ft_atoi(av[1]);
@@ -91,3 +91,4 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+*/
