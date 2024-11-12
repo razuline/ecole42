@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:47 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:15:58 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strrchr(const char *s, int c); /* Locate character in string (last occu
 int		ft_strncmp(char *s1, char *s2, size_t n); /* Compare strings (size-bounded) */
 void	*ft_memchr(void *s, int c, size_t n); /* Scan memory for a character */
 int		ft_memcmp(void *s1, void *s2, size_t n); /* Compare memory areas */
-char	*ft_strnstr(const char *big, const char *little, size_t len); /* Locate a substring in a string (size-bounded) */
+char	*ft_strnstr(char *big, char *little, int len); /* Locate a substring in a string (size-bounded) */
 int		ft_atoi(char *str); /* Convert ASCII string to integer */
 void	*ft_calloc(size_t nmemb, size_t size); /* Memory allocation */
 char	*ft_strdup(char *src); /* Save a copy of a string (with malloc) */

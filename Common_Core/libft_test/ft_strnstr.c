@@ -6,13 +6,13 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:19:16 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:58 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:23:10 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strnstr(char *str, char *to_find, int len)
 {
 	int	count;
 	int	start;
@@ -39,16 +39,17 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	char mon_str[] = "Je suis a Paris";
 	char find[] = "suis";
 	char *result = ft_strnstr(mon_str, find, 5);
 	
-	if (result != NULL)
+	if (result == NULL)
 		write (1, "String found\n", 13);
 	else
 		write (1, "String not found\n", 17);
 	return (0);
 }
+*/
