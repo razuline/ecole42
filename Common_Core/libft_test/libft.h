@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 14:23:11 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:36:01 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_isalnum(int c); /* Alphanumeric character test */
 int		ft_isascii(int c); /* Test for ASCII character */
 int		ft_isprint(int c); /* Printing character test (space character inclusive) */
 int		ft_strlen(char *str); /* Find length of a string */
-void	*ft_memset(void *s, int c, size_t n); /* Fill memory with a constant byte */
+void	*ft_memset(void *dest, int c, size_t len); /* Fill memory with a constant byte */
 void	ft_bzero(void *s, size_t n); /* Zero a byte string */
 void	*ft_memcpy(void *dest, void *src, size_t n); /* Copy memory area */
 void	*ft_memmove(void *dest, void *src, size_t len); /* Copy memory area */
