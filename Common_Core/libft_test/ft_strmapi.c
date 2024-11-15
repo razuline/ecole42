@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 17:51:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 21:34:03 by razuline         ###   ########.fr       */
+/*   Created: 2024/11/15 20:54:28 by razuline          #+#    #+#             */
+/*   Updated: 2024/11/15 21:33:50 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(int, char *))
+char	*ft_strmapi(char *s, char (*f)(int, char))
 {
-	int	i;
+	int		i;
+	char	*res;
 
 	if (!s || !f)
 		return (NULL);
 	i = 0;
+	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!res)
+		return (NULL);
 	while (s[i])
 	{
-		f(i, &s[i]);
+		res[i] = f(i, s[i]);
 		i++;
 	}
+	res[i] = '\0';
+	return (res);
 }
 /*
-#include <stdio.h>  
+#include <stdio.h>
 
-void	func(unsigned int i, char *c)
+char	func(unsigned int i, char c)
 {
-	*c += i;
+	c += i;
+	return (c);
 }
 
 int	main()
 {
 	char	*str = "aaaaaa";
 
-	ft_striteri(str, &func);
-	printf("%s\n", str);
+	printf("%s\n", ft_strmapi(str, &func));
 }
 */
