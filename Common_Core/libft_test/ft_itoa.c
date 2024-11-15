@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:49:22 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 15:35:22 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:40:28 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int num)
 	str = (char *)malloc(sizeof(char) * (ft_intlen(num) + 1));
 	if (str == NULL)
 		return (NULL);
-	if (num == 0)
+	if (!num)
 		return (str = '\0');
 }
 
