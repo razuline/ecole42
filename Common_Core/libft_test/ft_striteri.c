@@ -1,53 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:16:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 17:50:48 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/15 17:51:25 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/15 17:54:24 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_toupper(char *str)
+void	ft_striteri(char *s, void (*f)(int, char *))
 {
 	int	i;
 
+	if (!s || !f)
+		return (0);
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = ((str[i] - 'a') + 'A');
-		}
+		f(i, &s[i]);
 		i++;
 	}
-	return (str);
-}
-/*
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*(str + i))
-		i++;
-	write (1, str, i);
 }
 
 int	main(void)
 {
-	char	s[] = "Hello";
-
-	ft_putstr(ft_toupper(s));
-	return (0);
+	
 }
-*/

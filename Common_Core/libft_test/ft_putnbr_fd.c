@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:43:15 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 14:31:02 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:51:38 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {
