@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 19:08:49 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:50:35 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_substr(char *s, int start, int len); /* Allocate and return a substring
 char	*ft_strjoin(char *s1, char *s2); /* Allocate and return a new string */
 char	*ft_strtrim(char *s1, char *s2); /* Allocate and return a copy of string */
 char	**ft_split(char *s, char c); /* Allocate and return an array of strings */
-char	*ft_itoa(int n); /* Return a string representing the integer */
+char	*ft_itoa(int num); /* Return a string representing the integer */
 char	*ft_strmapi(char *s, char (*f)(int, char)); /* Create a new string */
 void	ft_striteri(char *s, void (*f)(int, char *));
 void	ft_putchar_fd(char c, int fd);

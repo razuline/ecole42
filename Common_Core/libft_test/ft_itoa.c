@@ -1,48 +1,67 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 18:43:15 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 14:31:02 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/15 13:49:22 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/15 15:35:22 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+static int	ft_intlen(int nb)
 {
+	int	len;
+	
 	if (nb == -2147483648)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		nb = 147483648;
+		len = 11;
+		return (len);
 	}
+	len = 0;
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
 		nb *= -1;
+		len++;
 	}
-	if (nb > 9)
+	if (nb <= 10)
+		len++;
+	while (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		nb /= 10;
+		len++;
 	}
-	else
-	{
-		ft_putchar_fd(nb + '0', fd);
-	}
+	return (len);
 }
-/*
+
+char	*ft_inttostr(int nbr, int len)
+{
+	
+}
+
+char	*ft_itoa(int num)
+{
+	char	*str;
+	
+	str = (char *)malloc(sizeof(char) * (ft_intlen(num) + 1));
+	if (str == NULL)
+		return (NULL);
+	if (num == 0)
+		return (str = '\0');
+}
+
+#include <stdio.h>
+
 int	main(void)
 {
+	int	i;
 	int	res;
 
-	res = -2147483648;
-	ft_putnbr_fd(res, 2);
-	ft_putchar_fd('\n', 2);
-	return (0);
+	i = -10;
+	res = ft_intlen(i);
+	printf("%d\n", res);
+	return(0);
 }
-*/

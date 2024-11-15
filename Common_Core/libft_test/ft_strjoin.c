@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:55:40 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 17:54:02 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:55:51 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {
