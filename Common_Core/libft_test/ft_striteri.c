@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:51:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 21:34:03 by razuline         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:09:34 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	unsigned int	i;
 
 	if (!s || !f)
-		return (NULL);
+		return ;
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		f(i, &s[i]);
 		i++;
@@ -28,16 +28,20 @@ void	ft_striteri(char *s, void (*f)(int, char *))
 /*
 #include <stdio.h>  
 
-void	func(unsigned int i, char *c)
+void	f(unsigned int i, char *s)
 {
-	*c += i;
+	unsigned int	n;
+	
+	n = i;
+	*s = 'a';
 }
 
-int	main()
+int	main(void)
 {
-	char	*str = "aaaaaa";
+	char	*str = "Hello";
 
-	ft_striteri(str, &func);
+	ft_striteri(str, f);
 	printf("%s\n", str);
+	return (0);
 }
 */
