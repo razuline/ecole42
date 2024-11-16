@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:42:46 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 19:03:56 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:42 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

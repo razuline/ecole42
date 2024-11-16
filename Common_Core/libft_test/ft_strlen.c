@@ -6,13 +6,13 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:14:06 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/10 11:48:48 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:14:04 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* The ft_strlen() function finds length of a string */
 
-#include "./libft.h"
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

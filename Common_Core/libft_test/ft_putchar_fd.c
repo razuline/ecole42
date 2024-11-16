@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:41:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 19:01:39 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:39 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

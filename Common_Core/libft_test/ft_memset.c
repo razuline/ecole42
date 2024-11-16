@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:14:38 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/14 14:43:05 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:37 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *dest, int c, size_t len)
 {

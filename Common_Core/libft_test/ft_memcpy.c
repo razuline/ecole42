@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 18:46:52 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:30 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, void *src, size_t n)
 {

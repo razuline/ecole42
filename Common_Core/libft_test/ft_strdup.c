@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:20:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 14:15:57 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:53 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

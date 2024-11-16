@@ -6,16 +6,16 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:54:28 by razuline          #+#    #+#             */
-/*   Updated: 2024/11/16 14:10:10 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:34:03 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char *s, char (*f)(int, char))
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*res;
+	unsigned int	i;
+	char			*res;
 
 	if (!s || !f)
 		return (NULL);

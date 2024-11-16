@@ -6,11 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/12 18:29:14 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:13:59 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 int	ft_strlcat(char *dest, char *src, int size)
 {
