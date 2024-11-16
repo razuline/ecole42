@@ -6,52 +6,58 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:55:40 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 13:55:51 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:41:34 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Allocates (with malloc(3)) and returns a new string, which is the result 
+of the concatenation of ’s1’ and ’s2’.
+s1: The prefix string.
+s2: The suffix string.
+Returns the new string or NULL if the allocation fails. */
 
 #include "libft.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
-	int		j;
-	int		len;
+	int		len1;
+	int		len2;
 	char	*result;
 
-	i = 0;
-	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *)malloc(sizeof(char) * (len + 1));
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!result)
 		return (NULL);
-	while (s1[i] != '\0')
+	i = 0;
+	while (s1[i])
 	{
 		result[i] = s1[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	i = 0;
+	while (s2[i])
 	{
-		result[i] = s2[j];
-		i++;
-		j++;
+		result[len1++] = s2[i++];
 	}
-	result[i] = '\0';
+	result[len1] = '\0';
 	return (result);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
 {
 	char	*res;
-	char	*s1 = "C'est la vie";
-	char	*s2 = " *.* ";
+	char	*s1 = "peanut ";
+	char	*s2 = "butter";
 	
 	res = ft_strjoin(s1, s2);
 	printf("%s\n", res);
 	free(res);
 	return (0);
 }
+*/
