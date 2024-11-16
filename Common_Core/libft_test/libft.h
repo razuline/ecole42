@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:33:34 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:53:22 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strdup(char *src); /* Save a copy of a string (with malloc) */
 char	*ft_substr(char *s, int start, int len); /* Allocate and return a substring */
 char	*ft_strjoin(char *s1, char *s2); /* Allocate and return a new string */
 char	*ft_strtrim(char *s1, char *s2); /* Allocate and return a copy of string */
-char	**ft_split(char *s, char c); /* Allocate and return an array of strings */
+char	**ft_split(char *str, char sep); /* Allocate and return an array of strings */
 char	*ft_itoa(int num); /* Return a string representing the integer */
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char)); /* Create a new string */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
