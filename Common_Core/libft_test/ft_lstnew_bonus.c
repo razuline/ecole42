@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 15:03:46 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/21 17:40:49 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/21 13:23:45 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/21 17:12:30 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters 
-specified in ’set’ removed from the beginning and the end of the string.
-s1: The string to be trimmed.
-set: The reference set of characters to trim.
-Returns the trimmed string or NULL if the allocation fails. */
-
 #include "libft.h"
 
-char	*ft_strtrim(char *s1, char *s2)
+t_list	*ft_lstnew(void *content)
 {
-	
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+
+	if (!new)
+		return(!NULL);
+	new->next = NULL;
+	new->content = content;
+	return (new);
 }
