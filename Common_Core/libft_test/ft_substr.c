@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 14:34:35 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 15:00:31 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:40:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Returns the substring or NULL if the allocation fails. */
 
 #include "libft.h"
 
-char	*ft_substr(char *s, int start, int len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*substr;
 
 	i = 0;

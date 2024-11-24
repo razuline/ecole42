@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:43:06 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 14:05:13 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:43:15 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	**ft_malloc_error(char **arr)
 	return (NULL);
 }
 
-static int	ft_wordcount(char *str, char c)
+static int	ft_wordcount(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -52,7 +52,7 @@ static int	ft_wordcount(char *str, char c)
 	return (count);
 }
 
-static char	*ft_getword(char *str, int *idx, char c)
+static char	*ft_getword(char const *str, int *idx, char c)
 {
 	char	*new;
 	int		word_len;
@@ -77,13 +77,13 @@ static char	*ft_getword(char *str, int *idx, char c)
 	return (new);
 }
 
-char	**ft_split(char *str, char sep)
+char	**ft_split(char const *str, char sep)
 {
-	char    **split;
+	char	**split;
 	int		wdct;
 	int		idx;
 	int		i;
-	
+
 	i = 0;
 	idx = 0;
 	if (!str)
@@ -120,7 +120,6 @@ int	main(void)
 		printf("%s\n", *res);
 		res++;
 	}
-	free(res);
 	return (0);
 }
 */

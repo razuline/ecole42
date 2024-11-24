@@ -6,48 +6,27 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:16:39 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:14:18 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 15:39:10 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = ((str[i] - 'A') + 'a');
-		}
-		i++;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+			c += 32;
+	return (c);
 }
 /*
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*(str + i))
-		i++;
-	write (1, str, i);
-}
+#include <stdio.h>
 
 int	main(void)
 {
-	char	s[] = "HELLO";
-
-	ft_putstr(ft_tolower(s));
+	int	c = 'A';
+	int	result = ft_tolower(c);
+	printf("%d\n", c);
+	printf("%d\n", result);
 	return (0);
 }
 */

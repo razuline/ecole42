@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:18:01 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:14:15 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:25:05 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*p;
+	int	i;
 
-	p = NULL;
-	if (*s == (char)c)
-		p = s;
-	if (*s++ == '\0')
-		return ((char *)p);
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *) &s[i]);
+		i--;
+	}
+	if (!(char)c)
+		return ((char *) &s[i]);
 	return (0);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:42:46 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:13:42 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:33:32 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);
-	write(fd, "\n", 2);
+	write(fd, "\n", 1);
 }
 /*
 int	main(void)
