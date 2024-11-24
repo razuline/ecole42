@@ -6,18 +6,18 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 16:59:02 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 17:25:07 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_H
-# define FT_LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <ctype.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+# include <ctype.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 /* Mandatory Part */
 
@@ -48,7 +48,7 @@ char	*ft_strdup(const char *src);
 /* Additional Functions */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const*s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
 char	**ft_split(char const *str, char sep);
 char	*ft_itoa(int num);
