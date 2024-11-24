@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:03:46 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/21 17:40:49 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 14:07:03 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Returns the trimmed string or NULL if the allocation fails. */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s1, char *s2)
-{
+// char	*ft_strtrim(char *s1, char *s2)
+// {
 	
-}
+// }

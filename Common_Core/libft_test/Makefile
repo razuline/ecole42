@@ -6,7 +6,7 @@
 #    By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 13:03:55 by erazumov          #+#    #+#              #
-#    Updated: 2024/11/21 17:51:27 by erazumov         ###   ########.fr        #
+#    Updated: 2024/11/24 14:06:33 by erazumov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 HEADER = libfh.h
-LIBC - ar rcs
+LIBC = ar rcs
 FUNC = $(shell find -name \*.c)
 OBJS = $(FUNC:.c=.o)
 

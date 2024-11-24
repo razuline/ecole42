@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:43:06 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 16:51:01 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/24 14:05:13 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,86 +20,107 @@ the allocation fails.*/
 
 #include "libft.h"
 
-static int	ft_is_space(char to_find, char *str)
+static char	**ft_malloc_error(char **arr)
 {
-	while (*str)
-	{
-		if (to_find == *str++)
-			return (1);
-	}
-	return (0);
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+	return (NULL);
 }
 
-static int	ft_wordcount(char *str, char *c)
+static int	ft_wordcount(char *str, char c)
 {
+	int	i;
 	int	count;
 
-	if (!str)
-		return (0);
+	i = 0;
 	count = 0;
-	while (*str)
+	while (str[i])
 	{
-		while (ft_is_space(*str, c))
-			str++;
-		if (*str && !(ft_is_space(*str, c)))
+		if (str[i] == c)
+			i++;
+		else
 		{
 			count++;
-			while (*str && !(ft_is_space(*str, c)))
-				str++;
+			while (str[i] != c && str[i])
+				i++;
 		}
 	}
 	return (count);
 }
 
-static int	ft_wordlen(char *str, char *c)
+static char	*ft_getword(char *str, int *idx, char c)
 {
-	int	len;
+	char	*new;
+	int		word_len;
+	int		i;
 
-	len = 0;
-	while (str[len] && !(ft_is_space(str[len], c)))
-		len++;
-	return (len);
+	word_len = 0;
+	while (str[*idx] == c)
+		(*idx)++;
+	i = *idx;
+	while (str[i] && str[i] != c)
+	{
+		word_len++;
+		i++;
+	}
+	new = malloc(sizeof(char) * (word_len + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (str[*idx] && str[*idx] != c)
+		new[i++] = str[(*idx)++];
+	new[i] = '\0';
+	return (new);
 }
 
 char	**ft_split(char *str, char sep)
 {
 	char    **split;
+	int		wdct;
+	int		idx;
 	int		i;
-
+	
 	i = 0;
-	split = (char **)malloc((sizeof(char *) * ft_wordcount(str, sep) + 1));
-	if (!str || !split)
-		return (0);
-	i = 0;
-	while (*str)
+	idx = 0;
+	if (!str)
+		return (NULL);
+	wdct = ft_wordcount(str, sep);
+	split = malloc(sizeof(char *) * (wdct + 1));
+	if (!split)
+		return (NULL);
+	while (i < wdct)
 	{
-		while (*str == sep && *str)
-			str++;
-		if (*str)
-		{
-			if (!ft_strchr(str, sep))
-				wordnbr = ft_strlen(str);
-			else
-				wordnbr = ft_strchr(str, sep) - str;
-			split[i++] = ft_substr(str, 0, wordnbr);
-			str += wordnbr;
-		}
+		split[i] = ft_getword(str, &idx, sep);
+		if (!split[i])
+			return (ft_malloc_error(split));
+		i++;
 	}
-	split[i] = NULL;
+	split[i] = 0;
 	return (split);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
 {
 	char	*str;
-	char	c;
+	char	sep;
 	char	**res;
 
-	str = "C'estlavie.";
-	c = ' ';
-	res = ft_split(str, c);
-	printf("%s\n", *res);
+	str = " C'e stl avi e. ";
+	sep = ' ';
+	printf("%d\n", ft_wordcount(str, sep));
+	res = ft_split(str, sep);
+	while (*res)
+	{
+		printf("%s\n", *res);
+		res++;
+	}
+	free(res);
 	return (0);
 }
+*/
