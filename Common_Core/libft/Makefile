@@ -13,7 +13,7 @@
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
-HEADER = libfh.h
+HEADER = libft.h
 LIBC = ar rcs
 FUNC = $(shell find -name \*.c)
 OBJS = $(FUNC:.c=.o)
