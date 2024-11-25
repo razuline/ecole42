@@ -6,36 +6,36 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/25 17:07:48 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/25 17:48:07 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "printf.h"
 
-int	ft_ifnostr(const char *format, ...)
-{
-	int		i;
-	int		index;
-	char	spcf;
-	char	*buffer;
-	va_list	arg_list;
-	
-	va_start(arg_list, format);
 
-	i = 0;
-	index = 0;
-	buffer = BUFF_SIZE;
-	while (format[i])
+
+int	ft_printf(const char *format, ...)
+{
+	int		len;
+	int		i;
+	int		j;
+	char	c;
+	va_list	args;
+
+	va_start(args, format);
+
+	while (format[i] != '\0')
 	{
-		buffer[index++] = format[i++];
-		if (format[i + 1] == '%' || format[i + 1] == '\0')
-		{
-			buffer[index] = '\0';
-			index = 0;
-			if (buffer[0] != '%')
-				write(1, buffer[index++], 1);
-		}
-	}
+		if (format[i] == '%')
+			i++;
+			if (format[i] == 'c')
+
+
+
+
+
+			
+	return (len);
 }
 
