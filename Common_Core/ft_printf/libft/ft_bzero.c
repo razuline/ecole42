@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/25 17:07:48 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/09 18:14:49 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/16 14:12:50 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "printf.h"
 
-int	ft_ifnostr(const char *format, ...)
+void	ft_bzero(void *dest, size_t len)
 {
-	int		i;
-	int		index;
-	char	spcf;
-	char	*buffer;
-	va_list	arg_list;
-	
-	va_start(arg_list, format);
-
-	i = 0;
-	index = 0;
-	buffer = BUFF_SIZE;
-	while (format[i])
-	{
-		buffer[index++] = format[i++];
-		if (format[i + 1] == '%' || format[i + 1] == '\0')
-		{
-			buffer[index] = '\0';
-			index = 0;
-			if (buffer[0] != '%')
-				write(1, buffer[index++], 1);
-		}
-	}
+	ft_memset(dest, '\0', len);
+}
+/*
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
 }
 
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*(str + i))
+		i++;
+	write (1, str, i);
+}
+
+int	main(void)
+{
+	char dest1[] = "Hello, World";
+
+	ft_bzero(dest1, 1);
+	ft_putstr(dest1);
+	return (0);
+}
+*/
