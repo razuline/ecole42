@@ -6,14 +6,14 @@
 #    By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 13:50:28 by erazumov          #+#    #+#              #
-#    Updated: 2024/11/25 14:09:13 by erazumov         ###   ########.fr        #
+#    Updated: 2024/11/25 14:19:03 by erazumov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CFLAGS = -Wall -Wextra -Werror
-HEADER = libft.h
+HEADER = printf.h
 LIBC = ar rcs
 FUNC = $(shell find -name \*.c)
 OBJS = $(FUNC: .c=.o)
