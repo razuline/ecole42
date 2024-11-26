@@ -6,9 +6,16 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:18:01 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 16:25:05 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:47:32 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* The strrchr() function returns a pointer to the last occurrence of the
+character c in the string s.
+The strrchr() function returns a pointer to the matched character or NULL
+if the character is not found. The terminating null byte is considered part
+of the string, so that if c is specified as '\0', this function
+returns a pointer to the terminator. */
 
 #include "libft.h"
 

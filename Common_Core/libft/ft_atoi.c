@@ -6,13 +6,17 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:19:28 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:12:44 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:59:14 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The atoi() function converts the initial portion of the string pointed
+to by nptr to int.
+Returns the converted value or 0 on error. */
+
 #include "libft.h"
 
-int	ft_atoi(char *str);
+int	ft_atoi(const char *str);
 
 static int	ft_isspace(int c)
 {
@@ -22,7 +26,7 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	sign;

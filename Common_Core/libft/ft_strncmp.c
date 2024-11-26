@@ -6,9 +6,21 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:18:19 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 17:13:07 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:49:50 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* The  strcmp() function compares the two strings s1 and s2. The locale
+is not taken into account (for  a  locale-aware  comparison, see strcoll(3)).
+The comparison is done using unsigned characters.
+
+strcmp() returns an integer indicating the result of the comparison, as follows:
+       • 0, if the s1 and s2 are equal;
+       • a negative value if s1 is less than s2;
+       • a positive value if s1 is greater than s2.
+
+The strncmp() function is similar, except it compares only the first
+(at most) n bytes of s1 and s2. */
 
 #include "libft.h"
 

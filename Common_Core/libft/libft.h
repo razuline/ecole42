@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:10:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/26 14:41:03 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:58:17 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memchr(void *s, int c, size_t len);
+void	*ft_memchr(const void *s, int c, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t len);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
 
