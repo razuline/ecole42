@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:17:49 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/26 14:46:06 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:30:46 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ returns a pointer to the terminator. */
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	ch;
+
+	ch = c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == ch)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if (ch == '\0')
 		return ((char *)s);
 	return (NULL);
 }
