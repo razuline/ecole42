@@ -6,9 +6,13 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:49:22 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 19:23:23 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:11:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Allocates (with malloc(3)) and returns a string representing the integer
+received as an argument. Negative numbers must be handled.
+The string representing the integer. NULL if the allocation fails. */
 
 #include "libft.h"
 

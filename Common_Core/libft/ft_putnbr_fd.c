@@ -6,9 +6,12 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:43:15 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/15 17:51:38 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:17:13 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Outputs the integer ’n’ to the given file descriptor. External functions:
+write. Returns nothing. */
 
 #include "libft.h"
 

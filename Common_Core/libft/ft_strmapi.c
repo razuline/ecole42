@@ -6,13 +6,20 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:54:28 by razuline          #+#    #+#             */
-/*   Updated: 2024/11/16 14:34:03 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:13:33 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Applies the function f to each character of the string s, passing its index
+as the first argument and the character itself as the second. A new string is
+created (using malloc(3)) to collect the results from the successive
+applications of f.
+The string created from the successive applications of ’f’.
+Returns NULL if the allocation fails. */
+
 #include "libft.h"
 
-char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*res;

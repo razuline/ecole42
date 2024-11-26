@@ -6,9 +6,14 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:51:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:09:34 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:14:44 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Applies the function ’f’ on each character of the string passed as argument,
+passing its index as first argument. Each character is passed by address to ’f’
+to be modified if necessary.
+Returns nothing. */
 
 #include "libft.h"
 

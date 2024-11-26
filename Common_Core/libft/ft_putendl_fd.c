@@ -6,9 +6,12 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:42:46 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 16:33:32 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:18:16 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Outputs the string ’s’ to the given file descriptor followed by a newline.
+External functions: write. Returns nothing. */
 
 #include "libft.h"
 
