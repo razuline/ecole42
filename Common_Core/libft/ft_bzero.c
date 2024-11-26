@@ -6,9 +6,13 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:14:49 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:12:50 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:34:14 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* The  bzero()  function  erases  the  data  in the n bytes of the memory
+starting at the location pointed to by s, by writing zeros
+(bytes containing '\0') to that area. Returns nothing. */
 
 #include "libft.h"
 

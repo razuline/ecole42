@@ -6,11 +6,14 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:14:06 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 16:21:13 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:31:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The ft_strlen() function finds length of a string */
+/* The strlen() function calculates the length of the string pointed to by
+s, excluding the terminating null byte ('\0').
+The strlen() function returns the number of bytes in the string pointed
+to by s. */
 
 #include "libft.h"
 

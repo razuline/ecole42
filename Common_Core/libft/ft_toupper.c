@@ -6,9 +6,16 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:16:25 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/24 15:39:22 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:28:02 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* These functions convert lowercase letters to uppercase, and vice versa.
+If c is a lowercase letter, toupper() returns its uppercase equivalent,
+if an uppercase representation exists in the  current  locale.   Other‐
+wise, it  returns c.
+The value returned is that of the converted letter, or c if the conversion
+was not possible. */
 
 #include "libft.h"
 

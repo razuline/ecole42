@@ -6,13 +6,18 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:33 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:14:02 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:40:12 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copy a string. Copy src to string dst of size siz. At most siz-1
+characters will be copied. Always NULL terminates (unless siz == 0).
+The strlcpy() function returns strlen(src). If retval >= siz,
+truncation occurred. */
+
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;

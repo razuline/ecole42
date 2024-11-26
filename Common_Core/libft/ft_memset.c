@@ -6,9 +6,13 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:14:38 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:13:37 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:32:46 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* The  memset()  function  fills  the  first  n  bytes of the memory area
+pointed to by s with the constant byte c.
+The memset() function returns a pointer to the memory area s. */
 
 #include "libft.h"
 

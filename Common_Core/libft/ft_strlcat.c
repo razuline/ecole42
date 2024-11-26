@@ -6,13 +6,20 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:13:59 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:42:17 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Concatenate two strings. Appends src to string dst of size siz (unlike
+strncat(), siz is the full size of dst, not space left). At most siz-1
+characters will be copied. Always NULL terminates
+(unless siz <= strlen(dst)).
+The strlcat() function returns strlen(src) + MIN(siz, strlen(initial dst)). 
+If retval >= siz, truncation occurred. */
+
 #include "libft.h"
 
-int	ft_strlcat(char *dest, char *src, int size)
+size_t	ft_strlcat(char *dest, const char *src, int size)
 {
 	int	dest_len;
 	int	src_len;

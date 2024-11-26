@@ -6,9 +6,11 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:12:49 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:13:06 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:22:50 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Checks for a digit (0 through 9). */
 
 #include "libft.h"
 

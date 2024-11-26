@@ -6,9 +6,14 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:12:32 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:12:59 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:21:48 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Checks  for an alphabetic character; in the standard "C" locale,
+it is equivalent to (isupper(c) || islower(c)). In  some  locales, 
+there may be additional characters for which isalpha() is true—letters
+which are neither uppercase nor lowercase. */
 
 #include "libft.h"
 

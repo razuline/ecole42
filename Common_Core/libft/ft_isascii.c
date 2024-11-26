@@ -6,9 +6,12 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:13:21 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/16 14:13:03 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:24:16 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Checks whether c is a 7-bit unsigned char value that fits into
+the ASCII character set. */
 
 #include "libft.h"
 
