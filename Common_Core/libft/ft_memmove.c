@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:18 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/26 14:37:37 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:57:05 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,14 @@ The memmove() function returns a pointer to dest. */
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char	*n_dest;
-	char	*n_src;
-	size_t	i;
-
-	n_dest = (char *)dest;
-	n_src = (char *)src;
-	i = 0;
-	if (n_dest > n_src)
-	{
-		while (i < len)
-		{
-			n_dest[len - 1] = n_src[len - 1];
-			len--;
-		}
-	}	
+	if (!dest && !src)
+		return (NULL);
+	if (dest < src)
+		ft_memcpy(dest, src, len);
 	else
 	{
-		while (i < len)
-		{
-			n_dest[i] = n_src[i];
-			i++;
-		}
+		while (len--)
+			*((unsigned char *)(dest + len)) = *((unsigned char *)(src + len));
 	}
 	return (dest);
 }
