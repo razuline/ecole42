@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/25 17:57:53 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:50:40 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (format[i] == 'c')
 				ft_print_char(c);
-
-
-
-
-
-			
+	}	
 	return (len);
 }
-

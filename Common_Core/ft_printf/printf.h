@@ -6,14 +6,12 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:16:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/25 16:43:43 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:16:39 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
-
-# define BUFF_SIZE 1024;
 
 # include <ctype.h>
 # include <fcntl.h>

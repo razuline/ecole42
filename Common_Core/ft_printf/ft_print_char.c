@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:14:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/25 17:56:36 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:49:29 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_print_char(char c)
 	if (ft_ifnochar == 1)
 		write(1, c, 1);
 }
+
+#include <unistd.h>
 
 int	main(void)
 {
