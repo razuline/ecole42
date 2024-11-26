@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:15:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/26 14:42:17 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:40:19 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ If retval >= siz, truncation occurred. */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int	dest_len;
-	int	src_len;
-	int	total_len;
-	int	i;
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	total_len;
+	size_t	i;
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	total_len = dest_len + src_len;
-	if (size == 0)
+	if (size <= 0)
 		return (src_len);
 	if (size <= dest_len)
 		return (src_len + size);
