@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:14:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/27 13:09:33 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/27 13:07:02 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/27 13:13:36 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include <printf.h>
 
-static int	ft_ifnochar(char c)
+static int	ft_ifnostr(char *s)
 {
-	if (c)
+	if (*s)
 		return (1);
 	return (0);
 }
 
-void	ft_print_char(char c)
+void	ft_print_str(char *str)
 {
-	if (ft_ifnochar == 1)
-		write(1, c, 1);
-}
+	int		i;
+	int		j;
+	char	*buff;
 
-#include <unistd.h>
-
-int	main(void)
-{
-	char c;
-
-	c = 'G';
-	printf("%c", c);
-	return (0);
+	i = 0;
+	j = 0;
+	while (str[i] != '\0')
+	{
+		
+	}
 }
