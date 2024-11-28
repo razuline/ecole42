@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_base10.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:14:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 15:11:05 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/28 14:46:37 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/28 14:57:41 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-/*static int	ft_ifnochar(char c)
+void	ft_print_base10(int n)
 {
-	if (c)
-		return (1);
-	return (0);
-}
-*/
-int	ft_print_char(char c)
-{
-	if (c)
-		write(1, &c, 1);
-	return (1);
+	while (n >= '0' && n <= '9')
+	{
+		ft_putchar(n + '0');
+		while 
+	}
+		
 }
 
 int	main(void)
 {
-	char	c;
+	int nb;
 
-	c = 'G';
-	ft_print_char(c);
-	ft_print_char('\n');
+	nb = 9;
+	ft_print_base10(nb);
 	return (0);
 }
