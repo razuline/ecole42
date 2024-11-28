@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_base10.c                                  :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:46:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 14:57:41 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:07:47 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_print_base10(int n)
+void	ft_print_nbr(int n, int *len)
 {
-	while (n >= '0' && n <= '9')
+	unsigned int	nb;
+
+	nb = n;
+	if (n < 0)
 	{
-		ft_putchar(n + '0');
-		while 
-	}
 		
+	}
 }
 
 int	main(void)
@@ -27,6 +28,6 @@ int	main(void)
 	int nb;
 
 	nb = 9;
-	ft_print_base10(nb);
+	ft_print_nbr(nb);
 	return (0);
 }

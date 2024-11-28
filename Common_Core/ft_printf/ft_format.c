@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:16:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 21:11:14 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/28 21:03:22 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/28 21:03:59 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "printf.h"
 
-# include <ctype.h>
-# include <fcntl.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
+int	ft_format(const char *format, va_list args)
+{
+	int	len;
 
-int		ft_printf(const char *format, ...);
-
-int		ft_format(const char *format, va_list args);
-int		ft_print_char(char c);
-int		ft_print_str(const char *str);
-void	ft_putchar(char c, int *len);
-
-#endif
+	if (*format == '%')
+		len = ft_print_char('%');
+	else if (*format == 'c')
+		len = ft_print_char(va_arg(args, int));
+	else if (*format == 's')
+		len = ft_print_str(va_arg(args, char *));
+	/*else if (*format == 'p')
+		len =*/ 
+	return (len);
+}

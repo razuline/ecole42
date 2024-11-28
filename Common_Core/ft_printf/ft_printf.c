@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 20:37:20 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:04:17 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,10 @@ int	ft_printf(const char *format, ...)
 	len = 0;
 	while (*format)
 	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == '%')
-			{
-				ft_print_char('%');
-				len++;
-			}	
-			else if (*format == 'c')
-			{
-				ch = va_arg(args, int);
-				ft_print_char(ch);
-				len++;
 			}
 			else if (*format == 's')
 			{
-				str = va_arg(args, char *);
+				str = 
 				ft_print_str(str);
 				len++;
 			}
