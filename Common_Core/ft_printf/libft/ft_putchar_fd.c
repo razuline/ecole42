@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 13:07:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 13:52:25 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/14 18:41:25 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/26 15:15:51 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <printf.h>
+/* Outputs the character ’c’ to the given file descriptor. External functions:
+write. Returns nothing. */
 
-static int	ft_ifnostr(char *s)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (*s)
-		return (1);
+	write(fd, &c, 1);
+}
+/*
+int	main(void)
+{
+	char	my_letter;
+
+	my_letter = 'c';
+	ft_putchar_fd(my_letter, 2);
+	ft_putchar_fd('\n', 2);
 	return (0);
 }
-
-void	ft_print_str(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (ft_ifnostr != 0 && str[i] != '\0')
-	{
-		write(1, *str, i++);
-	}
-}
-
-int	main(int ac, char **av)
-{
-	char	*str = av[1];
-
-	if (ac > 1)
-	{
-		
-	}
-}
+*/

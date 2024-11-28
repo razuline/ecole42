@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 13:07:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 13:52:25 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/14 18:42:46 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/26 15:18:16 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <printf.h>
+/* Outputs the string ’s’ to the given file descriptor followed by a newline.
+External functions: write. Returns nothing. */
 
-static int	ft_ifnostr(char *s)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (*s)
-		return (1);
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
+}
+/*
+int	main(void)
+{
+	char	*s;
+
+	s = "Hello!";
+	ft_putendl_fd(s, 2);
 	return (0);
 }
-
-void	ft_print_str(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (ft_ifnostr != 0 && str[i] != '\0')
-	{
-		write(1, *str, i++);
-	}
-}
-
-int	main(int ac, char **av)
-{
-	char	*str = av[1];
-
-	if (ac > 1)
-	{
-		
-	}
-}
+*/
