@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:14:43 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 15:11:05 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:45:14 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_print_char(char c)
 		write(1, &c, 1);
 	return (1);
 }
-
+/*
 int	main(void)
 {
 	char	c;
@@ -35,3 +35,4 @@ int	main(void)
 	ft_print_char('\n');
 	return (0);
 }
+*/

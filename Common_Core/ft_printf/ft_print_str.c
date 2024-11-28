@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:07:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/28 15:10:16 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:35:21 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	return (0);
 }
 */
-int	ft_print_str(char *str)
+int	ft_print_str(const char *str)
 {
 	int		len;
 
