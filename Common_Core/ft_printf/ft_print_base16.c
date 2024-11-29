@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_u.c                                       :+:      :+:    :+:   */
+/*   ft_print_base16.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 15:28:55 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/29 15:48:29 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/29 15:44:02 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/29 16:23:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_print_u(unsigned int n, int *len)
+static void	ft_addprefix(void *prefix, int *len)
 {
-	if (n < 10)
-		ft_putchar(n + '0', len);
-	else 
-	{
-		ft_print_nbr(n / 10, len);
-		ft_print_nbr(n % 10, len);
-	}
-	return (*len);
+	
 }
 
-#include <stdio.h>
+int	ft_print_base16(unsigned int nb, char Xx, int *len)
+{
+	unsigned int	base_len;
+	char			*base;
+
+	base_len = 16;
+	if (Xx == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	if (nb < base_len)
+		ft_putchar(base[nb % base_len], len);
+	else
+		ft_print_base16(nb / base_len, Xx, len);
+		ft_print_base16(nb % base_len, Xx, len);
+}
 
 int	main(void)
 {
-	int nb;
-	int	len;
-
-	nb = 1;
-	len = ft_print_u(nb, &len);
-	printf("\n%d\n", len);
-	return (0);
+	int n = 1128;
+	
+	
 }
