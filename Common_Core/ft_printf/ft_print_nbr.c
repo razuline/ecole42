@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:46:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/29 15:18:51 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:19:39 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_print_nbr(int n, int *len)
 	}
 	return (*len);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -50,3 +50,4 @@ int	main(void)
 	printf("\n%d\n", len);
 	return (0);
 }
+*/
