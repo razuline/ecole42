@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 14:30:58 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/30 18:15:24 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,16 @@
 
 int	ft_printf(const char *format, ...)
 {
-	unsigned int	i;
-	char			*s;
-	char			*buff;
+	unsigned int	printed;
+	va_list			arg;
 
-	va_list	args;
-	va_start(args, format);
+	va_start(arg, format);
+	
+	if (*format == NULL || format[0] == '%' && format[1] == '\0')
+		return (-1);
 
-	len = 0;
-	while (*format)
-	{
-			}
-			else if (*format == 's')
-			{
-				str = 
-				ft_print_str(str);
-				len++;
-			}
-		}
-		else
-		{
-			ft_print_str(format);
-			len++;
-		}
-		format++;	
-	}
-	va_end(args);
-	return (len);
+	va_end(arg);
+	return (printed);
 }
 
 int	main(void)
