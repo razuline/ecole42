@@ -1,34 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 14:43:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/29 15:02:01 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/30 14:33:27 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/30 14:35:31 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putchar(char c, int *len)
-{
-	write(1, &c, 1);
-		(*len)++;
-}
-/*
-int	main(void)
-{
-	char	c;
-	int		len;
-	int		*ptr;
-
-	c = 'G';
-	len = 1;
-	ptr = &len;
-	ft_putchar(c, &len);
-	ft_putchar('\n', &len);
-	return (0);
-}
-*/
+char	*ft_convert_base(unsigned int nbr, int base)

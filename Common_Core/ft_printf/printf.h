@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:16:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/29 15:45:23 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:51:47 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int		ft_print_str(const char *str);
 int		ft_print_nbr(int n, int *len);
 int		ft_print_u(unsigned int n, int *len);
 int		ft_print_base16(unsigned int nb, char Xx, int *len);
-void	ft_putchar(char c, int *len);
+int		ft_put_char(char c);
 
 #endif

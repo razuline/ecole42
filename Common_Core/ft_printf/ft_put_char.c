@@ -1,54 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_put_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 14:30:58 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/28 14:43:23 by erazumov          #+#    #+#             */
+/*   Updated: 2024/11/30 17:52:47 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+The function ft_put_char writes character c to stdout.
+c - the character to print;
+Returns 1 in case of success, -1 if it's error.
+*/
+
 #include "printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_put_char(char c)
 {
-	unsigned int	i;
-	char			*s;
-	char			*buff;
-
-	va_list	args;
-	va_start(args, format);
-
-	len = 0;
-	while (*format)
-	{
-			}
-			else if (*format == 's')
-			{
-				str = 
-				ft_print_str(str);
-				len++;
-			}
-		}
-		else
-		{
-			ft_print_str(format);
-			len++;
-		}
-		format++;	
-	}
-	va_end(args);
-	return (len);
+	return (write(1, &c, 1));
 }
-
+/*
 int	main(void)
 {
-	char c = 'G';
-	char *str = "Hello, World!";
+	char	c;
 
-	ft_printf("%c\n", c);
-	ft_printf("%s\n", str);
+	c = 'G';
+	ft_put_char(c);
+	ft_put_char('\n');
 	return (0);
 }
+*/

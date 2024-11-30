@@ -6,21 +6,16 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:44:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/29 16:23:31 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/11/30 14:05:20 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static void	ft_addprefix(void *prefix, int *len)
+int	ft_print_base16(unsigned long int nb, char Xx, int *len)
 {
-	
-}
-
-int	ft_print_base16(unsigned int nb, char Xx, int *len)
-{
-	unsigned int	base_len;
-	char			*base;
+	unsigned long int	base_len;
+	char				*base;
 
 	base_len = 16;
 	if (Xx == 'x')
@@ -32,6 +27,15 @@ int	ft_print_base16(unsigned int nb, char Xx, int *len)
 	else
 		ft_print_base16(nb / base_len, Xx, len);
 		ft_print_base16(nb % base_len, Xx, len);
+}
+
+void	ft_addprefix(void *prefix, int *len)
+{
+	unsigned long int	ptr;
+
+	ptr = (unsigned long int) prefix;
+	ft_putchar("0x", len);
+	ft_print_base16(ptr, 'x', len);
 }
 
 int	main(void)
