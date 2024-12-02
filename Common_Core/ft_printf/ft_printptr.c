@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_u.c                                       :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 15:28:55 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/02 16:49:30 by razuline         ###   ########.fr       */
+/*   Created: 2024/12/02 16:24:18 by razuline          #+#    #+#             */
+/*   Updated: 2024/12/02 16:49:53 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_u_len(unsigned int n)
+static int	ft_ptr_len(unsigned int n)
 {
 	int	len;
 
@@ -20,38 +20,48 @@ static int	ft_u_len(unsigned int n)
 	while (n != 0)
 	{
 		len++;
-		n = n / 10;
+		n = n / 16;
 	}
 	return (len);
 }
 
-int	ft_print_u(unsigned int nbr)
+static void	ft_ptr_format(unsigned int nb)
 {
-	int		len;
-	char	*num;
+	if (nb >= 16)
+	{
+		ft_ptr_format(nb / 16);
+		ft_ptr_format(nb % 16);
+	}
+	else
+	{
+		if (nb <= 9)
+			ft_printchar(nb + '0');
+		else
+			ft_printchar(nb - 10 + 'A');
+	}
+}
+
+int	ft_printptr(unsigned long long ptr)
+{
+	int	len;
 
 	len = 0;
-	if (nbr == 0)
+	len += ft_printstr("0x");
+	if (ptr == 0)
 		len += ft_printchar('0');
-	else 
+	else
 	{
-		num = ft_itoa(nbr);
-		len += ft_printstr(num);
-		free(num);
+		ft_ptr_format(ptr);
+		len += ft_ptr_len(ptr);
 	}
 	return (len);
 }
 /*
-#include <stdio.h>
-
-int	main(void)
+int main(void)
 {
-	int nb;
-	int	len;
+	int	long long = 123;
 
-	nb = 1;
-	len = ft_print_u(nb, &len);
-	printf("\n%d\n", len);
+	ft_printptr(nbr);
 	return (0);
 }
 */

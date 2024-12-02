@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:16:37 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 15:51:47 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:49:01 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);
+int		ft_formats(va_list args, const char format);
 
-int		ft_format(const char *format, va_list args);
-int		ft_print_char(char c);
-int		ft_print_str(const char *str);
-int		ft_print_nbr(int n, int *len);
-int		ft_print_u(unsigned int n, int *len);
-int		ft_print_base16(unsigned int nb, char Xx, int *len);
-int		ft_put_char(char c);
+int		ft_printchar(char c);
+int		ft_printstr(const char *str);
+int		ft_printptr(unsigned long long ptr);
+int		ft_printnbr(int n);
+int		ft_print_u(unsigned int n);
+int		ft_printhex(unsigned int nbr, const char format);
+char	*ft_itoa(int num);
 
 #endif

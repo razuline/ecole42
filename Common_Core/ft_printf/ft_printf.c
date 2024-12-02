@@ -3,35 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:50:42 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 18:15:24 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:49:38 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
-	unsigned int	printed;
-	va_list			arg;
+	int		i;
+	int		print_len;
+	va_list	args;
 
-	va_start(arg, format);
-	
+	i = 0;
+	print_len = 0;
+	va_start(args, format);
 	if (*format == NULL || format[0] == '%' && format[1] == '\0')
 		return (-1);
-
-	va_end(arg);
-	return (printed);
-}
-
-int	main(void)
-{
-	char c = 'G';
-	char *str = "Hello, World!";
-
-	ft_printf("%c\n", c);
-	ft_printf("%s\n", str);
-	return (0);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			print_len += ft_formats(args, format[i + 1]);
+			i++;
+		}
+		else
+			print_len += ft_printchar(format[i]);
+		i++;
+	}
+	va_end(args);
+	return (print_len);
 }

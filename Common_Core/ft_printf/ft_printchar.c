@@ -1,15 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_base.c                                  :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 14:33:27 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 14:35:31 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/25 14:14:43 by erazumov          #+#    #+#             */
+/*   Updated: 2024/12/02 16:49:34 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-char	*ft_convert_base(unsigned int nbr, int base)
+int	ft_printchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+/*
+int	main(void)
+{
+	char	c;
+
+	c = 'G';
+	ft_printchar(c);
+	ft_printchar('\n');
+	return (0);
+}
+*/

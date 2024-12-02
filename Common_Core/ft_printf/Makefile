@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+         #
+#    By: razuline <razuline@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 13:50:28 by erazumov          #+#    #+#              #
-#    Updated: 2024/11/25 14:19:03 by erazumov         ###   ########.fr        #
+#    Updated: 2024/12/02 16:50:02 by razuline         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CFLAGS = -Wall -Wextra -Werror
-HEADER = printf.h
+HEADER = ft_printf.h
 LIBC = ar rcs
 FUNC = $(shell find -name \*.c)
 OBJS = $(FUNC: .c=.o)

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_char.c                                      :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 14:43:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/11/30 17:52:47 by erazumov         ###   ########.fr       */
+/*   Created: 2024/11/28 14:46:37 by erazumov          #+#    #+#             */
+/*   Updated: 2024/12/02 16:49:49 by razuline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-The function ft_put_char writes character c to stdout.
-c - the character to print;
-Returns 1 in case of success, -1 if it's error.
-*/
+#include "ft_printf.h"
 
-#include "printf.h"
-
-int	ft_put_char(char c)
+int	ft_printnbr(int n)
 {
-	return (write(1, &c, 1));
+	int		len;
+	char	*num;
+
+	len = 0;
+	num = ft_itoa(n);
+	len = ft_printstr(num);
+	free (num);
+	return (len);
 }
 /*
+#include <stdio.h>
+
 int	main(void)
 {
-	char	c;
+	int nb;
+	int	len;
 
-	c = 'G';
-	ft_put_char(c);
-	ft_put_char('\n');
+	nb = 10;
+	len = ft_printnbr(nb);
+	printf("%d\n", len);
 	return (0);
 }
 */
