@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:24:18 by razuline          #+#    #+#             */
-/*   Updated: 2024/12/03 15:40:52 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:46:27 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_printptr(unsigned long long ptr)
 		len += ft_printstr("(nil)");
 	else
 	{
-		len += ft_printstr("0x");	
+		len += ft_printstr("0x");
 		ft_ptr_format(ptr);
 		len += ft_ptr_len(ptr);
 	}
