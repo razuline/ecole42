@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: razuline <razuline@student.42.fr>          +#+  +:+       +#+         #
+#    By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 13:50:28 by erazumov          #+#    #+#              #
-#    Updated: 2024/12/02 16:50:02 by razuline         ###   ########.fr        #
+#    Updated: 2024/12/03 14:44:35 by erazumov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 HEADER = ft_printf.h
 LIBC = ar rcs
 FUNC = $(shell find -name \*.c)
-OBJS = $(FUNC: .c=.o)
+OBJS = $(FUNC:.c=.o)
 
 all: $(NAME)
 

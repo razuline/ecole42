@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:44:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/03 14:21:57 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:38:16 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,11 @@ static void	ft_hex_format(unsigned int nb, const char format)
 
 int	ft_printhex(unsigned int nbr, const char format)
 {
-	int	len;
-
-	len = 0;
-	len += ft_printstr("0x");
 	if (nbr == 0)
-		len += ft_printchar('0');
+		return (ft_printchar('0'));
 	else
-	{
 		ft_hex_format(nbr, format);
-		len += ft_hex_len(nbr);
-	}
-	return (len);
+	return (ft_hex_len(nbr));
 }
 
 /*

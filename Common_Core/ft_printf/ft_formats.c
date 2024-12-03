@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_formats.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:03:22 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/02 16:49:21 by razuline         ###   ########.fr       */
+/*   Updated: 2024/12/03 14:48:44 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_formats(va_list args, const char format)
 		print_len += ft_printnbr(va_arg(args, int));
 	else if (format == 'u')
 		print_len += ft_print_u(va_arg(args, unsigned int));
-	else if (format == 'x' || 'X')
+	else if (format == 'x' || format == 'X')
 		print_len += ft_printhex(va_arg(args, unsigned int), format);
 	return (print_len);
 }
