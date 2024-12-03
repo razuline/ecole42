@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:07:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/02 16:49:56 by razuline         ###   ########.fr       */
+/*   Updated: 2024/12/03 14:23:03 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_printstr(const char *str)
 	len = 0;
 	if (str == NULL)
 		ft_putstr("(null)");
-		return (6);
+	return (6);
 	while (str[len])
 	{
 		write(1, &str[len], 1);

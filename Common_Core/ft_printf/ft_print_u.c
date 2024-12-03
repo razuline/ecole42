@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:28:55 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/02 16:49:30 by razuline         ###   ########.fr       */
+/*   Updated: 2024/12/03 14:28:19 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_print_u(unsigned int nbr)
 	len = 0;
 	if (nbr == 0)
 		len += ft_printchar('0');
-	else 
+	else
 	{
 		num = ft_itoa(nbr);
 		len += ft_printstr(num);

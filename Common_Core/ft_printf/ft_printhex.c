@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razuline <razuline@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:44:02 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/02 16:49:45 by razuline         ###   ########.fr       */
+/*   Updated: 2024/12/03 14:21:57 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_printhex(unsigned int nbr, const char format)
 	int	len;
 
 	len = 0;
-	len += ft_printstr("0x"); 
+	len += ft_printstr("0x");
 	if (nbr == 0)
 		len += ft_printchar('0');
 	else
