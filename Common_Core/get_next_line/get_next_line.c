@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/04 15:15:08 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:59:48 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,27 @@ occurred. */
 
 char	*get_next_line(int fd)
 {
-	char	buf[BUFFER_SIZE + 1];
-	int		nb_read;
+	static char	*buffer;
+	char		*line;
 
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	
 }
 
-int	main(void)
+#include "stdio.h"
+
+int	main(int ac, char **av)
 {
 	int		fd;
 	char	*line;
 
-	fd = open("test_file.txt", O_RDONLY);
+	if (ac < 2)
+	{
+		printf("File %s is empty\n", av[1]);
+		return (1);
+	}
+	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 		return (1);
 	while (1)
@@ -40,6 +49,8 @@ int	main(void)
 		line = get_next_line(fd);
 		if (line == NULL)
 			return (NULL);
+		printf("%s\n", line);
+		free(line);
 	}
 	close(fd);
 	return (0);
