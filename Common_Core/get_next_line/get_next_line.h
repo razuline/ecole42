@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:05 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/03 19:08:07 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/04 14:57:18 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+# define BUFFER_SIZE
 
 char	*get_next_line(int fd);
 
