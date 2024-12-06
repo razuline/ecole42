@@ -6,12 +6,21 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/05 15:23:27 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:46:16 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/* If an error */
+int	ft_display_error(char *str)
+{
+	if (str)
+		free(str);
+	return (-1);
+}
+
+/* Count a length of a string */
 size_t	ft_strlen(char *str)
 {
 	size_t	i;
@@ -22,6 +31,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
+/* Look for a new line character (\n) */
 int	ft_find_newline(char *str)
 {
 	if (str)
@@ -36,6 +46,7 @@ int	ft_find_newline(char *str)
 	return (0);
 }
 
+/* Concatenate lines */
 char	*ft_line_join(char const *s1, char const *s2)
 {
 	size_t	i;
@@ -67,14 +78,54 @@ char	*ft_line_join(char const *s1, char const *s2)
 	return (result);
 }
 
-/* If an error */
-int	ft_display_error(char *str)
+/* Remove the blank space character from the beginning and end of a string */
+char	*ft_trim_rem(char *str)
 {
-	int	i;
+	size_t	x;
+	size_t	y;
+
+	x = 0;
+	y = 0;
+	if (!str)
+		return (NULL);
+	while (str[x] != '\n' && str[x] != '\0')
+		x++;
+	if (str[x] == '\0')
+	{
+		free(str);
+		return (NULL);
+	}
+	x++;
+	while (str[x + y])
+	{
+		str[y] = str[x + y];
+		y++;
+	}
+	str[y] = '\0';
+	return (str);
+}
+
+/* Get a new line from file */
+char	*ft_get_line(char *str)
+{
+	size_t	i;
+	size_t	j;
+	char	*line;
 
 	i = 0;
-	while (str[i])
+	if (!str)
+		return (NULL);
+	while (str[i] != '\n' && str[i] != '\0')
 		i++;
-	write(2, str, i);
-	return (-1);
+	line = (char *)malloc(i + 1);
+	if (!line)
+		return (NULL);
+	j = 0;
+	while (str[j] != '\n' && str[j] != '\0')
+	{
+		line[j] = str[j];
+		j++;
+	}
+	line[j] = '\0';
+	return (line);
 }
