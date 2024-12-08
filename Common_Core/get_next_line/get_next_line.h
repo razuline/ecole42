@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:37:05 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/06 17:38:19 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:18:20 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@
 
 char	*get_next_line(int fd);
 
-int		ft_display_error(char *str);
-int		ft_find_newline(char *str);
-size_t	ft_strlen(char *str);
-char	*ft_line_join(char const *s1, char const *s2);
-char	*ft_trim_rem(char *str);
-char	*ft_get_line(char *str);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

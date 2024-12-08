@@ -6,24 +6,15 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/06 14:46:16 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:16:40 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-/* If an error */
-int	ft_display_error(char *str)
+size_t	ft_strlen(const char *str)
 {
-	if (str)
-		free(str);
-	return (-1);
-}
-
-/* Count a length of a string */
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -31,101 +22,73 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-/* Look for a new line character (\n) */
-int	ft_find_newline(char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (str)
-	{
-		while (*str)
-		{
-			if (*str == '\n')
-				return (1);
-			str++;
-		}
-	}
-	return (0);
-}
-
-/* Concatenate lines */
-char	*ft_line_join(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		len1;
+	int		len2;
 	char	*result;
 
-	i = -1;
-	j = -1;
-	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!result)
 		return (NULL);
-	if (s1)
+	i = 0;
+	while (s1[i])
 	{
-		while (s1[++i])
-			result[i] = s1[i];
+		result[i] = s1[i];
+		i++;
 	}
-	else
-		i = 0;
-	if (s2)
+	i = 0;
+	while (s2[i])
 	{
-		while (s2[++j])
-			result[i + j] = s2[j];
+		result[len1++] = s2[i++];
 	}
-	else
-		j = 0;
-	result[i + j] = '\0';
-	if (s1)
-		free(s1);
+	result[len1] = '\0';
 	return (result);
 }
 
-/* Remove the blank space character from the beginning and end of a string */
-char	*ft_trim_rem(char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	x;
-	size_t	y;
+	char	ch;
 
-	x = 0;
-	y = 0;
-	if (!str)
-		return (NULL);
-	while (str[x] != '\n' && str[x] != '\0')
-		x++;
-	if (str[x] == '\0')
+	ch = c;
+	while (*s)
 	{
-		free(str);
-		return (NULL);
+		if (*s == ch)
+			return ((char *)s);
+		s++;
 	}
-	x++;
-	while (str[x + y])
-	{
-		str[y] = str[x + y];
-		y++;
-	}
-	str[y] = '\0';
-	return (str);
+	if (ch == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 
-/* Get a new line from file */
-char	*ft_get_line(char *str)
+void	ft_bzero(void *s, size_t n)
 {
+	char	*str;
 	size_t	i;
-	size_t	j;
-	char	*line;
 
+	str = (char *)s;
 	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i] != '\n' && str[i] != '\0')
-		i++;
-	line = (char *)malloc(i + 1);
-	if (!line)
-		return (NULL);
-	j = 0;
-	while (str[j] != '\n' && str[j] != '\0')
+	while (i < n)
 	{
-		line[j] = str[j];
-		j++;
+		str[i] = '\0';
+		i++;
 	}
-	line[j] = '\0';
-	return (line);
+	(str);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*result;
+
+	result = malloc(nmemb * size);
+	if (!result)
+		return (0);
+	ft_bzero(result, nmemb * size);
+	return (result);
 }
