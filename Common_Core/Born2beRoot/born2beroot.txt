@@ -1,0 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    born2beroot.txt                                    :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/08 13:19:41 by erazumov          #+#    #+#              #
+#    Updated: 2024/12/08 13:55:51 by erazumov         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Use VirtualBox
+
+Main goal : Set up our first server
+Operating system : Debian (the latest sable version)
+
+1. Create at least 2 encrypted partitions using LVM.
+2. SSH service on the port 4242. (SSH isn't a root !)
+	- Check : setting up a new account
+3. Configuration : UFW with leave only port 4242 open
+4. Hostname: erazumov42 (it can be modified)
+5. Implementatin of strong password policy
+6. Install and configure sudo
+
+~ ~ ~ ~ ~
+aptitude VS. apt
