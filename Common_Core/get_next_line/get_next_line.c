@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/08 18:06:20 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:37:53 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,71 @@ occurred. */
 
 #include "get_next_line.h"
 
+static char	*ft_readline(int fd, char *buf, char *dupl)
+{
+	int	rdline;
+	char	*ch_tmp;
+
+	rdline = 1;
+	while (rdline != '\0')
+	{
+		rdline = read(fd, buf, BUFFER_SIZE);
+		if (rdline == -1)
+			return (NULL);
+		else if (rdline == 0)
+			break ;
+		buf[rdline] = '\0';
+		if (!dupl)
+			dupl = ft_strdup("");
+		ch_tmp = dupl;
+		dupl = ft_strjoin(ch_tmp, buf);
+		free(ch_tmp);
+		ch_tmp = NULL;
+		if (ft_strchr(buf, '\n'));
+			break ;
+	}
+	return (dupl);
+}
+
+static char	*ft_removeline(char *line)
+{
+	size_t	i;
+	char	*dupl;
+
+	i = 0;
+	while (line[i] != '\0' && line[i] != '\n')
+		i++;
+	if (line[i] == '\0' || line[i + 1] == '\0')
+		return (0);
+	dupl = ft_substr(line, i + 1, ft_strlen(line) - i);
+	if (*dupl == '\0')
+	{
+		free(dupl);
+		dupl = NULL;
+	}
+	line[i + 1] = '\0';
+	return (dupl);
+}
+
 char	*get_next_line(int fd)
 {
-	static char *remove;
-	char		*buffer;
+	static char *dupl;
+	char		*buf;
 	char		*line;
-	int			rd_lines;
 
 	line = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	buffer = (char *)malloc(BUFFER_SIZE + 1);
-	if (!buffer)
-		return (ft_display_error(remove));
-	rd_lines = 1;
-	while (ft_find_newline(remove) && fd > 0)
-	{
-		rd_lines = read(fd, buffer, BUFFER_SIZE);
-		if (rd_lines < 0)
-			return (ft_display_error(remove));
-		buffer[rd_lines] = '\0';
-		remove = ft_line_join(remove, buffer);
-	}
-	free(buffer);
-	line = ft_get_line(line);
-	remove = ft_trim_rem(remove);
-	if (rd_lines == 0 && !remove)
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
 		return (0);
-	return (1);
+	line = ft_readline(fd, buf, dupl);
+	free(buf);
+	buf = NULL;
+	if (!line)
+		return (NULL);
+	dupl = ft_removeline(line);
+	return (line);
 }
 
 #include "stdio.h"

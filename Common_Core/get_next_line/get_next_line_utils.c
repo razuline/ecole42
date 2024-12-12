@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/08 18:16:40 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:50:23 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,28 +67,42 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *src)
 {
-	char	*str;
-	size_t	i;
+	int		i;
+	char	*dest;
 
-	str = (char *)s;
 	i = 0;
-	while (i < n)
+	dest = malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (dest == NULL)
+		return (NULL);
+	while (src[i])
 	{
-		str[i] = '\0';
+		dest[i] = src[i];
 		i++;
 	}
-	(str);
+	dest[i] = 0;
+	return (dest);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*result;
+	size_t	i;
+	char	*substr;
 
-	result = malloc(nmemb * size);
-	if (!result)
-		return (0);
-	ft_bzero(result, nmemb * size);
-	return (result);
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return ((char *)ft_calloc(1, sizeof(char)));
+	if (start + len >= ft_strlen(s))
+		substr = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	while (s[start] && i < len)
+		substr[i++] = s[start++];
+	substr[i] = '\0';
+	return (substr);
 }
