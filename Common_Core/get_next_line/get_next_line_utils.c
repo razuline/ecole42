@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/12 12:50:23 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:45:01 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,21 +88,22 @@ char	*ft_strdup(const char *src)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
 	char	*substr;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return ((char *)ft_calloc(1, sizeof(char)));
-	if (start + len >= ft_strlen(s))
-		substr = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
-	else
-		substr = (char *)malloc(sizeof(char) * (len + 1));
+	substr = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!substr)
 		return (NULL);
-	while (s[start] && i < len)
-		substr[i++] = s[start++];
-	substr[i] = '\0';
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			substr[j] = s[i];
+		}
+		i++;
+	}
+	substr[j] = '\0';
 	return (substr);
 }
