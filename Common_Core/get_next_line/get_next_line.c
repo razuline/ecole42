@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/12 14:06:04 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:05:27 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,53 @@ occurred. */
 
 #include "get_next_line.h"
 
-static char	*ft_readline(int fd, char *buf, char *dupl)
+static char	*ft_read(int fd, char *buff)
 {
-	int		rdline;
-	char	*ch_tmp;
+	int		nbytes;
 
-	rdline = 1;
-	while (rdline != '\0')
+	if (fd < 0)
 	{
-		rdline = read(fd, buf, BUFFER_SIZE);
-		if (rdline == -1)
-			return (NULL);
-		else if (rdline == 0)
-			break ;
-		buf[rdline] = '\0';
-		if (!dupl)
-			dupl = ft_strdup("");
-		ch_tmp = dupl;
-		dupl = ft_strjoin(ch_tmp, buf);
-		free(ch_tmp);
-		ch_tmp = NULL;
-		if (ft_strchr(buf, '\n'))
-			break ;
+		free(buff);
+		return (-1);
 	}
-	return (dupl);
+	nbytes = read(fd, NULL, 0);
+	if (nbytes == -1 || BUFFER_SIZE <= 0 || fd < 0)
+	{
+		free(buff);
+		return (-1);
+	}
+	else
+	{
+		nbytes = read(fd, buff, BUFFER_SIZE);
+		if (nbytes == 0)
+		{
+			free(buff);
+			return (-1);
+		}
+		buff[nb_bytes] = '\0';
+	}
+	return (nb_bytes);
 }
 
-static char	*ft_removeline(char *line)
+static char	*ft_getline(int fd)
 {
-	size_t	i;
-	char	*dupl;
+	size_t	len;
+	char	*buff;
 
-	i = 0;
-	while (line[i] != '\n' && line[i] != '\0')
-		i++;
-	if (line[i] == '\0' || line[1] == '\0')
+	len = 0;
+	if (!line[len])
+		return (NULL);
+	while (line[len] != '\n' && line[len] != '\0')
+		len++;
+	if (line[len] == '\0' || line[1] == '\0')
 		return (0);
-	dupl = ft_substr(line, i + 1, ft_strlen(line) - i);
+	dupl = ft_substr(line, len + 1, ft_strlen(line) - len);
 	if (*dupl == '\0')
 	{
 		free(dupl);
 		dupl = NULL;
 	}
-	line[i + 1] = '\0';
+	line[len + 1] = '\0';
 	return (dupl);
 }
 
@@ -82,10 +86,10 @@ char	*get_next_line(int fd)
 	buf = NULL;
 	if (!line)
 		return (NULL);
-	dupl = ft_removeline(line);
+	dupl = ft_getline(line);
 	return (line);
 }
-
+/*
 #include "stdio.h"
 
 int	main(int ac, char const *av[])
@@ -108,3 +112,4 @@ int	main(int ac, char const *av[])
 	close(fd);
 	return (0);
 }
+*/

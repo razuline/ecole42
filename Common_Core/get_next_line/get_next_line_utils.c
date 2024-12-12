@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/12 13:45:01 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/12 15:27:11 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	return (i);
@@ -51,10 +53,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	char	ch;
 
+	if (!s)
+		return (NULL);
 	ch = c;
 	while (*s)
 	{
@@ -65,45 +69,4 @@ char	*ft_strchr(const char *s, int c)
 	if (ch == '\0')
 		return ((char *)s);
 	return (NULL);
-}
-
-char	*ft_strdup(const char *src)
-{
-	int		i;
-	char	*dest;
-
-	i = 0;
-	dest = malloc(sizeof(char) * ft_strlen(src) + 1);
-	if (dest == NULL)
-		return (NULL);
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	char	*substr;
-
-	substr = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!substr)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			substr[j] = s[i];
-		}
-		i++;
-	}
-	substr[j] = '\0';
-	return (substr);
 }
