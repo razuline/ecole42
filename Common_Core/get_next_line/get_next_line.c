@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/16 19:24:48 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/19 13:48:46 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_read(int fd, char *remainder)
 	char	*buff;
 	int		bytes;
 
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (ft_if_error(remainder));
 	bytes = 1;
-	while (!ft_str_chr(remainder, '\n') && bytes != 0)
+	while (!ft_strchr(remainder, '\n') && bytes != 0)
 	{
 		bytes = read(fd, buff, BUFFER_SIZE);
 		if (bytes == -1)
@@ -55,13 +55,13 @@ char	*ft_get_line(char *remainder)
 	int		i;
 	char	*line;
 
-	if (!remainder)
-		return (ft_if_error(remainder));
 	i = 0;
+	if (!remainder[i])
+		return (ft_if_error(remainder));
 	while (remainder[i] && remainder[i] != '\n')
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 2));
-	if(!line)
+	if (!line)
 		return (ft_if_error(line));
 	i = 0;
 	while (remainder[i] && remainder[i] != '\n')
@@ -84,34 +84,40 @@ char	*ft_cut_line(char *remainder)
 	int		j;
 	char	*new_remainder;
 
-	if (!remainder)
-		return (ft_if_error(remainder));
 	i = 0;
+	if (!remainder[i])
+		return (NULL);
 	while (remainder[i] && remainder[i] != '\n')
 		i++;
-	new_remainder = (char *)malloc(sizeof(char) * (ft_strlen(remainder) - i + 1));
+	new_remainder = (char *)malloc(sizeof(char) * (ft_strlen(remainder)
+				- i + 1));
 	if (!new_remainder)
 		return (ft_if_error(new_remainder));
+	i++;
 	j = 0;
 	while (remainder[i])
 		new_remainder[j++] = remainder[i++];
 	new_remainder[j] = '\0';
-	free(ft_if_error(remainder));
+	ft_if_error(remainder);
 	return (new_remainder);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char *remainder;
+	static char	*remainder;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (0);
 	remainder = ft_read(fd, remainder);
+	if (!remainder)
+		return (ft_if_error(remainder));
 	line = ft_get_line(remainder);
 	remainder = ft_cut_line(remainder);
 	return (line);
 }
+/*
+#include <stdio.h>
 
 int	main(int argc, char const *argv[])
 {
@@ -135,27 +141,4 @@ int	main(int argc, char const *argv[])
 	close(fd);
 	return (0);
 }
-
-#include <fcntl.h>
-#include <stdio.h>
-
-// int	main(int argc, char const *argv[])
-// {
-// 	int		fd;
-// 	int		count;
-// 	char	*line;
-
-// 	if (argc != 2)
-// 		return (-1);
-// 	fd = open(argv[1], O_RDONLY);
-// 	count = 19;
-// 	while (count > 0)
-// 	{
-// 		line = get_next_line(fd);
-// 		printf("%s", line);
-// 		free(line);
-// 		count--;
-// 	}
-// 	close(fd);
-// 	return (0);
-// }
+*/
