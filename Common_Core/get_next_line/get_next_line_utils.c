@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:51 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/19 13:39:14 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:44:34 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,42 +20,9 @@ size_t	ft_strlen(char *str)
 	if (!str)
 		return (0);
 	while (str[i])
-			i++;
+		i++;
 	return (i);
 }
-
-// char	*ft_str_join(char *remainder, char *buff)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	*result;
-
-// 	// if (!remainder || !buff)
-// 	// 	return (ft_if_error(remainder));
-// 	if (!remainder)
-// 	{
-// 		remainder = (char *)malloc(sizeof(char) * 1);
-// 		remainder[0] = '\0';
-// 	}
-// 	if (!remainder)
-// 		return (NULL);
-// 	result = (char *)malloc(sizeof(char) * (ft_strlen(remainder) +
-// 		ft_strlen(buff) + 1));
-// 	if (!result)
-// 		return (NULL);
-// 	i = 0;
-// 	while (remainder[i])
-// 	{
-// 		result[i] = remainder[i];
-// 		i++;
-// 	}
-// 	j = 0;
-// 	while (buff[j] != '\0')
-// 		result[i++] = buff[j++];
-// 	result[i] = '\0';
-// 	ft_if_error(remainder);
-// 	return (result);
-// }
 
 char	*ft_str_join(char *remainder, char *buff)
 {
@@ -68,7 +35,7 @@ char	*ft_str_join(char *remainder, char *buff)
 		remainder = (char *)malloc(sizeof(char) * 1);
 		remainder[0] = '\0';
 	}
-	if (!buff)
+	if (!remainder || !buff)
 		return (NULL);
 	result = malloc(sizeof(char) * ((ft_strlen(remainder)
 					+ ft_strlen(buff)) + 1));
@@ -81,7 +48,7 @@ char	*ft_str_join(char *remainder, char *buff)
 			result[i] = remainder[i];
 	while (buff[j] != '\0')
 		result[i++] = buff[j++];
-	result[i] = '\0';
+	result[ft_strlen(remainder) + ft_strlen(buff)] = '\0';
 	ft_if_error(remainder);
 	return (result);
 }
@@ -103,7 +70,6 @@ char	*ft_strchr(char *str, int c)
 		return ((char *)str);
 	return (NULL);
 }
-
 /*
 #include <stdio.h>
 

@@ -6,7 +6,7 @@
 /*   By: erazumov <erazumov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:36:23 by erazumov          #+#    #+#             */
-/*   Updated: 2024/12/19 13:48:46 by erazumov         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:55:15 by erazumov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_read(int fd, char *remainder)
 	char	*buff;
 	int		bytes;
 
-	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
 		return (ft_if_error(remainder));
 	bytes = 1;
@@ -57,12 +57,12 @@ char	*ft_get_line(char *remainder)
 
 	i = 0;
 	if (!remainder[i])
-		return (ft_if_error(remainder));
+		return (NULL);
 	while (remainder[i] && remainder[i] != '\n')
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
-		return (ft_if_error(line));
+		return (NULL);
 	i = 0;
 	while (remainder[i] && remainder[i] != '\n')
 	{
@@ -85,14 +85,14 @@ char	*ft_cut_line(char *remainder)
 	char	*new_remainder;
 
 	i = 0;
-	if (!remainder[i])
-		return (NULL);
 	while (remainder[i] && remainder[i] != '\n')
 		i++;
+	if (!remainder[i])
+		return (ft_if_error(remainder));
 	new_remainder = (char *)malloc(sizeof(char) * (ft_strlen(remainder)
 				- i + 1));
 	if (!new_remainder)
-		return (ft_if_error(new_remainder));
+		return (NULL);
 	i++;
 	j = 0;
 	while (remainder[i])
@@ -111,7 +111,7 @@ char	*get_next_line(int fd)
 		return (0);
 	remainder = ft_read(fd, remainder);
 	if (!remainder)
-		return (ft_if_error(remainder));
+		return (NULL);
 	line = ft_get_line(remainder);
 	remainder = ft_cut_line(remainder);
 	return (line);
